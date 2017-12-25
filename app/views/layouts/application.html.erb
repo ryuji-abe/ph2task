@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostApp</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="top_menu clearfix">
+            <li><%= link_to "HOME", root_path %></li>
+            <li><%= link_to "投稿一覧", posts_path %></li>
+            <li><%= link_to "新規投稿", new_post_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="wrapper clearfix">
+        <article class="content">
+          <section class="section">
+            <%= yield %>
+          </section>
+        </article>
+      </div>
+      <footer class="footer">
+        <p>post app</p>
+      <footer>
+    </div>
+  </body>
+</html>

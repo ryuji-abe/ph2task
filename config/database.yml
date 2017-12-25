@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+
+development:
+  <<: *default
+  database: dic-ph2task-app_development
+
+test:
+  <<: *default
+  database: dic-ph2task-app_test
+
+production:
+  <<: *default
+  database: dic-ph2task-app_production
+  username: dic-ph2task-app
+  password: <%= ENV['DIC-PH2TASK-APP_DATABASE_PASSWORD'] %>
